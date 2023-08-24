@@ -6,10 +6,10 @@ VALIDATE(){
     #$1 --> it will receive the argument1
 if [ $1 -ne 0 ]
 then
-    echo "Installation.... Failure"
+    echo "$2 Installation.... Failure"
     exit 1
 else
-    echo "Installation.... success"
+    echo "$2 Installation.... success"
 fi
 }
 
@@ -21,4 +21,4 @@ fi
 
 yum install git -y
 
-VALIDATE $?
+VALIDATE $? "Installing git"

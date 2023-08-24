@@ -6,9 +6,6 @@ NUMBER2= $2
 
 #I need to run a command inside the shell to add there 2 numbers
 
-sum=$((NUMBER1)+(NUMBER2))
+sum=$((NUMBER1+NUMBER2))
 
 echo "Addition of 2 numbers is $sum"
-
-
-

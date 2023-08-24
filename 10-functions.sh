@@ -1,5 +1,8 @@
 #!/bin/bash
 
+DATE=$(date +%F-%H:%M:%S)
+SCRIPT_NAME=$0
+LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
 USERID=$(id -u)
 
 VALIDATE(){
@@ -19,6 +22,6 @@ then
     exit 1
 fi
 
-yum install git -y
+yum install git -y &>>$LOGFILE
 
 VALIDATE $? "git"

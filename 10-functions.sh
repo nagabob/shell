@@ -21,4 +21,4 @@ fi
 
 yum install git -y
 
-VALIDATE $? "Installing git"
+VALIDATE $? "git"

@@ -4,4 +4,4 @@ echo "enter a array: "
 
 read ARRAY
 
-echo "entered array is $Array"
+echo "entered array is ${ARRAY[@]}"

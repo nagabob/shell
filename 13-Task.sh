@@ -29,7 +29,7 @@ PACKAGE(){
         yum install $i -y >>$LOGFILE
         VALIDATE $? $i
     else
-        echo -e "$i $G already installed"
+        echo -e "$i $G already installed$N"
     fi
 }
 for i in $@

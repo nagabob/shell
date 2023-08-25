@@ -26,7 +26,7 @@ VALIDATE(){
 PACKAGE(){
     if [ $1 -ne 0 ]
     then
-        yum install $i -y
+        yum install $i -y >>$LOGFILE
         VALIDATE $? $i
     else
         echo -e "$i $G already installed"
@@ -34,6 +34,6 @@ PACKAGE(){
 }
 for i in $@
 do
-    yum list installed | grep $i
+    yum list installed | grep $i >>$LOGFILE
     PACKAGE $?
 done

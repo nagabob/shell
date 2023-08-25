@@ -10,14 +10,6 @@ then
     echo "Run the script with root access"
     exit 1
 fi
-
-for i in $@
-do
-    yum install $i -y
-    echo $i
-    VALIDATE $? "Test"
-done
-
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
@@ -26,3 +18,9 @@ VALIDATE(){
         echo "$i Installation is failure"
     fi
 }
+for i in $@
+do
+    yum install $i -y
+    echo $i
+    VALIDATE $? "Test"
+done

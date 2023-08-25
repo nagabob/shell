@@ -27,6 +27,7 @@ PACKAGE(){
     if [ $1 -ne 0 ]
     then
         yum install $i -y
+        VALIDATE $? $i
     else
         echo -e "$i $G already installed"
     fi
@@ -35,7 +36,4 @@ for i in $@
 do
     yum list installed | grep $i
     PACKAGE $?
-    # yum install $i -y
-    # #echo $i
-    VALIDATE $? $i
 done

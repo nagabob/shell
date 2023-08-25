@@ -22,9 +22,19 @@ VALIDATE(){
         echo -e "$i Installation is $G Success$N"
     fi
 }
+
+PACKAGE(){
+    if [ $1 -ne 0 ]
+    then
+        yum install $i -y
+    else
+        echo -e "$i $G already installed"
+}
 for i in $@
 do
-    yum install $i -y
-    #echo $i
+    yum list installed | grep $i
+    PACKAGE $?
+    # yum install $i -y
+    # #echo $i
     VALIDATE $? $i
 done

@@ -4,6 +4,9 @@ DATE=$(date +%F)
 SCRIPTNAME=$0
 LOGFILE=/tmp/$SCRIPTNAME-/$DATE.log
 USERID=$(id -u)
+R="\e[31m"
+G="\e[32m"
+N="\e[0m"
 
 if [ $USERID -ne 0 ]
 then
@@ -14,9 +17,9 @@ fi
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
-        echo "$i Installation is success"
+        echo -e "$i Installation is $R Failure$N"
     else
-        echo "$i Installation is failure"
+        echo -e "$i Installation is $G Success$N"
     fi
 }
 for i in $@

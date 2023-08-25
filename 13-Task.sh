@@ -5,7 +5,7 @@ SCRIPTNAME=$0
 LOGFILE=/tmp/$SCRIPTNAME-/$DATE.log
 USERID=$(id -u)
 
-if ($USERID -ne 0)
+if ( $USERID -ne 0 )
 then
     echo "Run the script with root access"
     exit 1

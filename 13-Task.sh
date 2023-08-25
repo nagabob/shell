@@ -2,7 +2,7 @@
 
 DATE=$(date +%F)
 SCRIPTNAME=$0
-LOGFILE=/tmp/$SCRIPTNAME-/$DATE.log
+LOGFILE=/tmp/$SCRIPT_NAME-$DATE.log
 USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"

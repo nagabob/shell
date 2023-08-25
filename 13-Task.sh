@@ -14,7 +14,7 @@ fi
 for i in $@
 do
     yum install $i -y
-    VALIDATE 
+    VALIDATE $? $i
 done
 
 VALIDATE(){

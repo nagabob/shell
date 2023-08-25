@@ -29,6 +29,7 @@ PACKAGE(){
         yum install $i -y
     else
         echo -e "$i $G already installed"
+    fi
 }
 for i in $@
 do
